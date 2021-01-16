@@ -1,1 +1,138 @@
 
+body {
+    background-color: #48A9A6;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+   
+}
+
+#twiglogo{
+    /* this is to make sure the image scales as tab/window size is adjusted*/
+
+    width: 55vw;
+    height: auto;
+    margin: auto;
+  }
+
+
+#content-container {
+    /* default text/element styling within content div */
+    
+    /*font-size: 2em;*/
+    color: white;
+    display: inline-block;
+    min-width: 50%;
+
+}
+
+#content-container p {
+
+    font-size: 0.5em;
+
+}
+
+/* for the circles suggesting people */
+
+.connection {
+   
+    
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    text-align: center;
+    display: inline-flex;
+
+    height: 0px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    width: 25%;
+
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: -1em;
+
+    
+    min-width: 1em;
+    min-height: 1em;
+
+    background-image: url(../images/cute_branches_light.png);
+    background-size: cover;
+    vertical-align: middle;
+    
+    box-shadow: -0.2em 0.2em #2E4057;
+
+}
+
+/* if you hover over a connection circle OR have connected with the person */
+.connection:hover, .made-connection {
+
+    background-image: url(../images/cute_branches_dark.png);
+    background-size: cover;
+
+    box-shadow: -0.2em 0.2em #587AA6;
+
+}
+
+form {
+    text-align: left;
+    font-size: 0.75em;
+}
+
+/* for the form submission, a little action when u hover over the button :)*/
+input[type=submit]:hover{
+    background-color: #2E4057;
+    color: white;
+
+}
+
+button, input[type=submit] {
+    /* some basics: make buttons rounded corners */
+
+    border-radius: 5px;
+    
+    border: none;
+    padding: 0.2em;
+    
+
+  }
+
+  /* vis-button = circular buttons designed to look like contacts */
+  .vis-button {
+
+    margin: 1.5em;
+    
+    padding-bottom: 5%;
+    padding-top: 5%;
+    width: 15%;
+
+
+    border-radius: 50%;
+
+    background-image: url(../images/cute_branches_light.png);
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    box-shadow: -0.2em 0.2em #2E4057;
+
+  }
+
+  .vis-button:hover {
+    background-image: url(../images/cute_branches_dark.png);
+    box-shadow: -0.2em 0.2em #587AA6;
+    
+  }
+
+
+  .all-conn-display{
+    background-color: #587AA6;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    font-family: 'Lato';
+    border-radius: 2px;
+
+    
+
+  }
