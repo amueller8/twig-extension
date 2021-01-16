@@ -1,14 +1,14 @@
 {
     "name": "Twig",
-    "version": "1.0",
+    "version": "0.0.1",
 
     
     "description": "Branch out a little every day",
     "icons": {
-        "16": "images/FILLERIMAGENAME.png",
-        "32": "images/FILLERIMAGENAME.png",
-        "48": "images/FILLERIMAGENAME.png",
-        "128": "images/FILLERIMAGENAME.png"
+        "16": "images/ext_logo.png",
+        "32": "images/ext_logo.png",
+        "48": "images/ext_logo.png",
+        "128": "images/ext_logo.png"
     },
 
     "permissions": ["storage",
@@ -16,8 +16,8 @@
                     ],
     "action": {
         "default_icon": {
-            "16": "images/FILLERIMAGENAME.png",
-            "32": "images/FILLERIMAGENAME.png"
+            "16": "images/ext_logo.png",
+            "32": "images/ext_logo.png"
           }
     },
     
