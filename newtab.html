@@ -4,8 +4,11 @@
 <head>
     <title>twig</title>
     <link rel="stylesheet" href="tab_css.css">
-    
-    <script src='jquery-3.5.1.js'></script> <!-- jQuery reference- make minified later-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"> <!-- material icons-->
+
+    <script src='jquery-3.5.1.min.js'></script> <!-- jQuery reference- minified it already even though im in development lmao-->
+
     <script src="newtab.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,8 +22,55 @@
     -->
    
 </head>
+
 <body>
+    <div id="content-container">
+      <!-- put my canva image here haha -->
+      <img id = 'twiglogo' src = ''/>
+      
+      <!-- put the 3 random people here-->
+    <div id='to-connect-with'>
+    </div>
+  
+    <button id='connection-click' class = 'vis-button'><span class="material-icons">
+        group_add
+    </span></button>
 
+    <button id = 'seeall' class = 'vis-button'><span class="material-icons">
+          group
+    </span></button>
 
+    <!-- the form for adding new connection to Chrome -->
+    <div id='connection-update'>
+    <form id = "add-connection">
+        <label for="name">Person's Name:</label> 
+        <input type="text" id = "name" name = "name"> <br>
+
+            <!--
+            <label for="lname">Last name:</label> 
+            <input type="text" id = "lname" name = "lname"> 
+            -->
+        
+        <label for="frequency">Desired Frequency:</label> 
+        <select name="frequency" id="frequency"> 
+        <option value="30">Daily</option> 
+        <option value="7">Weekly</option> 
+        <option value="5">Every Few Weeks</option> 
+        <option value="2">Once a Month or Less</option> 
+        </select> 
+        <br>
+        <input type="submit" id = "addnew" name = "addnew" value="Add"> 
+    </form> 
+    </div>
+
+      
+    
+    <!-- will be hidden but shows -->
+    <div id = 'connection-display'>
+    <p>All Connections:</p>
+    </div>
+  
+    </div>
 </body>
+
 </html>
