@@ -1,9 +1,11 @@
-/* the supporting functions! may need to move these lmao */
+/* the supporting functions! rn they are all at the top which is probably
+a bit confusing. sorry but not sorry.
+*/
 
 function newConnection(info_array) {
     // access the form info that was put into an array and sent to this function
-
     // to the 'list' key...
+
     chrome.storage.sync.get("list", function(data) {
             
             if (data.list === undefined){
@@ -155,6 +157,7 @@ function pickConnections(numPeople){
             });
 
             let areDailyConnectionsPicked = true;
+            console.log("the daily connections were picked");
     
     
     
@@ -173,6 +176,8 @@ function pickConnections(numPeople){
         /* FOR LATER: play around with storing first_three based on day so
         that each time in a day when you open a new tab, 
         you're still looking @ same ppl
+
+        could use chrome.alarms
         */
 
 
@@ -216,13 +221,17 @@ function shuffle(array) {
 /* the functionality for the newtab page */
 $(document).ready(function () {
 
-    /* for emergency reset purposes
+    /* for emergency reset purposes */
+    
+    /*
     chrome.storage.sync.set({list: []}, function(items) {
         console.log('list key created');
 
         items.list = [];
         
     }); */
+    
+    
 
     $("#connection-update").hide(); // hide the form
     $('#connection-display').hide(); // hide the list of all connections 
@@ -256,7 +265,36 @@ $(document).ready(function () {
         
         newConnection(form_array);
 
-        // check length list 
+        // check length list, if >= 3, pop up the circles
+
+        chrome.storage.sync.get("list", function(data){
+            if (!areDailyConnectionsPicked && data.list.length >= 0){
+                console.log(data.list.length, "datalist");
+                if(data.list.length < 2){
+                    for (var j = 0; j < data.list.length; j++){
+                        $('#to-connect-with').append("<div class = 'connection'>"+ `${data.list[j][0]}`+ "</div>");
+    
+                    }
+
+
+                } else {
+                    $('#to-connect-with').empty(); 
+                    console.log('cleared');
+                    pickConnections(3);
+                }
+            } else {
+                $('#to-connect-with').empty();
+                console.log('cleared');
+
+
+            }
+
+
+        });
+         
+
+        
+
         
 
         });

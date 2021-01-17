@@ -12,7 +12,8 @@
     },
 
     "permissions": ["storage",
-                    "tabs"
+                    "tabs",
+                    "alarms"
                     ],
     "action": {
         "default_icon": {
