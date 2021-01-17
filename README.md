@@ -1,6 +1,6 @@
 # twig-extension
 
-![Twig Logo](https://github.com/amueller8/twig-extension/images/twig_navy.png)
+![Twig Logo](https://github.com/amueller8/twig-extension/main/images/twig_navy.png)
 
 ## Inspiration
 
