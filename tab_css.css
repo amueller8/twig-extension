@@ -136,7 +136,24 @@ button, input[type=submit] {
     margin-bottom: 1em;
     font-family: 'Lato';
     border-radius: 2px;
+    font-size: 1em;
 
     
+
+  }
+
+.clearallconns {
+
+    font-size: 0.25em;
+
+
+
+  }
+
+.clearallconns:hover {
+
+    color: #2E4057;
+
+
 
   }

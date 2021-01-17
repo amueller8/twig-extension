@@ -32,18 +32,55 @@ function getConnections(){
     chrome.storage.sync.get("list", function(data) {
 
         $('#connection-display').empty(); // reset what was there (this is def inefficient but idgaf rn )
-        $('#connection-display').append("<p>All connections:</p>"); 
+        $('#connection-display').append("<p>All Connections: </p>"); 
+
+
 
         try {
             for (var i = 0; i < data.list.length; i++){
                 console.log(data.list[i][0]); // log name of connection 
     
                 /* FOR LATER: is String() necessary?? */
-                let to_append = "<div class = 'all-conn-display'>" + String(data.list[i][0]) + "</div>"; //idk if i need the string thing ngl
+                let to_append = "<div class = 'all-conn-display'>" + "<p>" + String(data.list[i][0]) + "</p>" + "<span class='material-icons clearallconns'> person_remove </span>"+ "</div>"; //idk if i need the string thing ngl
                 $('#connection-display').append(to_append);
+
     
             }
 
+            $('.clearallconns').click(function(){
+                let findthep = $(this).parent().children("p");
+
+                let name = findthep[0].innerText;
+
+                for (var j = 0; j < data.list.length; j++){
+                    if (data.list[j][0] == name){
+                        // remove one entry matching the name from the list
+                        
+                        //console.log(data.list, "before");
+                        data.list.splice(j, 1);
+                        //console.log(data.list, "after");
+
+                        chrome.storage.sync.set({list: data.list}, function(){
+                            console.log("removed??");
+
+                        });
+
+                        
+
+                        
+
+                    }
+                }
+
+                
+                
+                $(this).parent().remove();
+
+
+                // access list 
+
+
+            });
 
         } catch (TypeError) {
             ;
@@ -115,7 +152,7 @@ function pickConnections(numPeople){
             
              
             for (var j = 0; j < first_three.length; j++){
-                $('#to-connect-with').append("<div class = 'connection'>"+ `${first_three[j][0]}`+ "</div>");
+                $('#to-connect-with').append("<div class = 'connection'>"+ "<p>" + `${first_three[j][0]}`+ "</p>" + "</div>");
     
             }
             
@@ -297,7 +334,9 @@ $(document).ready(function () {
 
         
 
-        });
+    });
+
+   
     
     $('#seeall').click(function(){
         
@@ -306,12 +345,31 @@ $(document).ready(function () {
         
         getConnections();
 
+
         $('#connection-display').toggle(); // hide or show the full list of connections 
         //onStart(); //just in case it should still be hidden no matter what
 
-  
+
       });
-  
-  
+
+      /*
+    $('#clearallconns').click(function(){
+        console.log('clicked')
+        //$('#connection-display').toggle(); // hide or show the full list of connections
+        
+        chrome.storage.sync.set({list: []}, function(items) {
+            console.log('list key created');
+    
+            items.list = [];
+            
+        });
+    
+    });
+    */
+    
+
+
 });
+  
+
 
