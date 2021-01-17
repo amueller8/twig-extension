@@ -1,7 +1,5 @@
 # twig-extension
 
-![Twig Logo](https://github.com/amueller8/twig-extension/main/images/twig_navy.png)
-
 ## Inspiration
 
 Even though everyone has been spending lots of time online due to the pandemic, a feeling of social connectedness is hard to come by. I know that I personally continue to set goals to text/call a certain number of people a week, but I often miss these targets. I wanted to take advantage of the fact that most people are spending lots of time on their computers to encourage people to reach out more.
