@@ -1,11 +1,16 @@
 chrome.runtime.onInstalled.addListener(function() {
-    // instantiate the list, which keeps track of your contacts
+
     chrome.storage.sync.set({list: []}, function(items) {
         console.log('list key created');
+        
+      });
+    chrome.storage.sync.set({dailyConnections: undefined}, function(items) {
+        console.log('list key created');
+        
       });
     
-    
 });
+
 
 //ability to click on icon of extension to open new tab
 // creds to ryanfarney and chrome documentation :)

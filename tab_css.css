@@ -6,6 +6,8 @@ body {
    
 }
 
+
+
 #twiglogo{
     /* this is to make sure the image scales as tab/window size is adjusted*/
 
@@ -35,6 +37,7 @@ body {
 
 .connection {
    
+    font-size: 2em;
     
     justify-content: center;
     align-items: center;
@@ -60,6 +63,7 @@ body {
     vertical-align: middle;
     
     box-shadow: -0.2em 0.2em #2E4057;
+    
 
 }
 
